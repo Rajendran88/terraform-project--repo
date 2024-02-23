@@ -50,7 +50,7 @@ resource "aws_subnet" "private-2" {
 }
 # Internet Gateway - to have Internet traffic in public subnets
 resource "aws_internet_gateway" "my_IGW"{
-    vpc_id = aws_vpc.myvpc.id
+    vpc_id = aws_vpc.dev_vpc.id
     tags = {
         Name = "myvpcigw"
     }
