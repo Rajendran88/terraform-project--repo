@@ -55,3 +55,16 @@ resource "aws_internet_gateway" "my_IGW"{
         Name = "myvpcigw"
     }
 } 
+# Routing tables
+
+# Provides a resource to create a VPC routing table
+resource "aws_route_table" "my_publicRouteTable1"{
+    vpc_id = aws_vpc.nf_vpc.id
+    route{
+        cidr_block = "0.0.0.0/0"
+        gateway_id = aws_internet_gateway.nf_IGW.id
+    }
+    tags = {
+        Name = "mypublicRoute1"
+    }
+}
