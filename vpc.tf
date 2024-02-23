@@ -5,7 +5,7 @@ resource "aws_vpc" "dev_vpc" {
   enable_dns_support = true
   
   tags       =  {
-    name     = "deham10"
+    name     = "myvpc"
   }       
 }
 resource "aws_subnet" "public-1" {
@@ -15,6 +15,6 @@ resource "aws_subnet" "public-1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "deham10"
+    Name = "myvpc"
   }
 }
