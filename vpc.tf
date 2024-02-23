@@ -15,7 +15,7 @@ resource "aws_subnet" "public-1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "myvpc"
+    Name = "publicsubnet1"
   }
 }
 resource "aws_subnet" "private-1" {
@@ -25,7 +25,7 @@ resource "aws_subnet" "private-1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "myvpc"
+    Name = "privatesubnet1"
   }
 }
 resource "aws_subnet" "public-2" {
@@ -35,7 +35,7 @@ resource "aws_subnet" "public-2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "myvpc"
+    Name = "publicsubnet2"
   }
 }
 resource "aws_subnet" "private-2" {
@@ -45,7 +45,7 @@ resource "aws_subnet" "private-2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "myvpc"
+    Name = "privatesubnet2"
   }
 }
 # Internet Gateway - to have Internet traffic in public subnets
@@ -69,3 +69,16 @@ resource "aws_route_table" "my_publicRouteTable1"{
     }
 }
 
+# Provides a resource to create an association between a Public Route Table and a Public Subnet
+resource "aws_route_table_association" "my_publicSubnetAssociation1" {
+    route_table_id = aws_route_table.my_publicRoute1.id
+    subnet_id = aws_subnet.publicsubnet1.id
+    depends_on = [aws_route_table.nf_publicRouteTable1, aws_subnet.publicsubnet1]
+}
+
+# Provides a resource to create an association between a Public Route Table and a Public Subnet
+resource "aws_route_table_association" "my_publicSubnetAssociation2" {
+    route_table_id = aws_route_table.my_publicRoute1.id
+    subnet_id = aws_subnet.publicsubnet2.id
+    depends_on = [aws_route_table.nf_publicRouteTable1, aws_subnet.publicsubnet2]
+}
