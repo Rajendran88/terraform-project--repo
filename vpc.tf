@@ -62,7 +62,7 @@ resource "aws_route_table" "my_publicRouteTable1"{
     vpc_id = aws_vpc.nf_vpc.id
     route{
         cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.nf_IGW.id
+        gateway_id = aws_internet_gateway.myvpcIGW.id
     }
     tags = {
         Name = "mypublicRoute1"
