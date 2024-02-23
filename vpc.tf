@@ -69,16 +69,3 @@ resource "aws_route_table" "my_publicRouteTable1"{
     }
 }
 
-# Provides a resource to create an association between a Public Route Table and a Public Subnet
-resource "aws_route_table_association" "my_publicSubnetAssociation1" {
-    route_table_id = aws_route_table.my_publicRouteTable1.id
-    subnet_id = aws_subnet.my_publicsubnet1.id
-    depends_on = [aws_route_table.my_publicRouteTable1, public-1.my_publicsubnet1]
-}
-
-# Provides a resource to create an association between a Public Route Table and a Public Subnet
-resource "aws_route_table_association" "my_publicSubnetAssociation2" {
-    route_table_id = aws_route_table.my_publicRouteTable1.id
-    subnet_id = aws_subnet.my_publicsubnet2.id
-    depends_on = [aws_route_table.my_publicRouteTable1, public-2.my_publicsubnet2]
-}
