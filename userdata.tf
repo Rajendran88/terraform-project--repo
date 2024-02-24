@@ -1,10 +1,10 @@
 #! /bin/bash
 # # Install updates
-yum update -y
+sudo yum update -y
 # Install Apache server
- yum install -y httpd
+sudo yum install -y httpd
 # Install MariaDB, PHP and necessary tools
-yum install -y mariadb105-server php php-mysqlnd unzip
+sudo yum install -y mariadb105-server php php-mysqlnd unzip
 
 # Set database variables
 
