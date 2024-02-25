@@ -100,7 +100,7 @@ resource "aws_route_table_association" "my_privateSubnetAssociation1" {
     depends_on = [aws_route_table.my_privateRouteTable1, aws_subnet.private-1]
 }
 # Provides a resource to create an association between a Private Route Table and a Public Subnet
-resource "aws_route_table_association" "my_privateSubnetAssociation1" {
+resource "aws_route_table_association" "my_privateSubnetAssociation2" {
     route_table_id = aws_route_table.my_privateRouteTable1.id
     subnet_id = aws_subnet.private-1.id
     depends_on = [aws_route_table.my_privateRouteTable1, aws_subnet.private-1]
