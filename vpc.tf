@@ -80,6 +80,7 @@ resource "aws_route_table_association" "my_publicSubnetAssociation2" {
     route_table_id = aws_route_table.my_publicRouteTable1.id
     subnet_id = aws_subnet.public-2.id
     depends_on = [aws_route_table.my_publicRouteTable1, aws_subnet.public-2]
+  }  
 
 # Provides a resource to create a VPC routing table
 resource "aws_route_table" "my_privateRouteTable1"{
