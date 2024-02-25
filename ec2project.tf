@@ -19,7 +19,7 @@ data "aws_ami" "latest_linux_ami" {
 ### Create an EC2 instance
 
 resource "aws_instance" "instance" {
-  ami                         = data.aws_ami.latest_linux_ami.id
+  #ami                         = data.aws_ami.latest_linux_ami.id
   ami = var.AMIs[var.AWS_REGION]
   instance_type               = "t2.micro"
   availability_zone           = "us-west-2a"
