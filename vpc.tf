@@ -81,26 +81,3 @@ resource "aws_route_table_association" "my_publicSubnetAssociation2" {
     subnet_id = aws_subnet.public-2.id
     depends_on = [aws_route_table.my_publicRouteTable1, aws_subnet.public-2]
 }
-# Provides a resource to create a VPC routing table
-resource "aws_route_table" "my_privateRouteTable1"{
-    vpc_id = aws_vpc.dev_vpc.id
-    route{
-        cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.my_IGW.id
-    }
-    tags = {
-        Name = "myprivateRoute1"
-    }
-}
-# Provides a resource to create an association between a private Route Table and a Private Subnet
-resource "aws_route_table_association" "my_privateSubnetAssociation1" {
-    route_table_id = aws_route_table.my_privateRouteTable1.id
-    subnet_id = aws_subnet.private-1.id
-    depends_on = [aws_route_table.my_privateRouteTable1, aws_subnet.private-1]
-}
-# Provides a resource to create an association between a Private Route Table and a Private Subnet
-resource "aws_route_table_association" "my_privateSubnetAssociation2" {
-    route_table_id = aws_route_table.my_privateRouteTable1.id
-    subnet_id = aws_subnet.private-2.id
-    depends_on = [aws_route_table.my_privateRouteTable1, aws_subnet.private -2]
-}
