@@ -27,7 +27,7 @@ resource "aws_instance" "instance" {
   key_name                    = "vockey"
   vpc_security_group_ids      = [aws_security_group.sg_vpc.id]
   subnet_id                   = aws_subnet.public-1.id
-  iam_instance_profile        = "instance-profile-LabRole"
+  iam_instance_profile        = "instance-LabRole"
   count = 1
   tags = {
     Name = "Sandbox"
