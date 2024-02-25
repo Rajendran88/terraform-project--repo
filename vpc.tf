@@ -102,5 +102,5 @@ resource "aws_route_table_association" "my_privateSubnetAssociation1" {
 resource "aws_route_table_association" "my_privateSubnetAssociation2" {
     route_table_id = aws_route_table.my_privateRouteTable1.id
     subnet_id = aws_subnet.private-2.id
-    depends_on = [aws_route_table.my_publicRouteTable1, aws_subnet.private -2]
+    depends_on = [aws_route_table.my_privateRouteTable1, aws_subnet.private -2]
 }
