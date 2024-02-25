@@ -16,6 +16,5 @@ variable "AMIs" {
   description = "Region specific AMI"
   default = {
     us-west-2 = "ami-0895022f3dac85884"
-    us-west-2 = "ami-0895022f3dac85884"
   }
 }
