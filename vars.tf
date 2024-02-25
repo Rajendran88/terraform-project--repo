@@ -18,6 +18,4 @@ variable "AMIs" {
     us-west-2 = "ami-0895022f3dac85884"
     us-west-2 = "ami-0895022f3dac85884"
   }
-}check "name" {
-  
 }
