@@ -5,7 +5,7 @@ resource "aws_vpc" "dev_vpc" {
   enable_dns_support = true
   
   tags       =  {
-    name     = "myvpc"
+    name     = "myvpc1"
   }       
 }
 resource "aws_subnet" "public-1" {
