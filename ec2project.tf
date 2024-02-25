@@ -30,7 +30,7 @@ resource "aws_instance" "instance" {
   iam_instance_profile        = "labrole"
   count = 1
   tags = {
-    Name = "sandbox1"
+    Name = local.name
   }
   #user_data = file("userdata.sh")
     user_data = "${base64encode(data.template_file.ec2userdatatemplate.rendered)}"
