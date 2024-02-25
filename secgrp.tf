@@ -1,6 +1,6 @@
 # create a security group for the vpc
-resource "aws_security_group" "vpc_security_group" {
-  name        = "vpc_security_group"
+resource "aws_security_group" "sg_vpc" {
+  name        = "sg_vpc"
   description = "Allow shh"
   vpc_id      = aws_vpc.dev_vpc.id
 
