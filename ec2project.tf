@@ -28,7 +28,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids      = [aws_security_group.sg_vpc.id]
   subnet_id                   = aws_subnet.public-1.id
 
-  iam_instance_profile        = "Labrole"
+  #iam_instance_profile        = "Labrole"
   count = 1
   tags = {
     Name = "Sandbox1"
