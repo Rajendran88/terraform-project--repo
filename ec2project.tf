@@ -32,7 +32,8 @@ resource "aws_instance" "instance" {
   count = 1
   tags = {
     Name = "Sandbox1"
- 
+
+ }
   #user_data = file("userdata.sh")
     user_data = "${base64encode(data.template_file.ec2userdatatemplate.rendered)}"
 
