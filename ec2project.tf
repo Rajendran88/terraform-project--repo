@@ -27,18 +27,12 @@ resource "aws_instance" "instance" {
   key_name                    = "vockey"
   vpc_security_group_ids      = [aws_security_group.sg_vpc.id]
   subnet_id                   = aws_subnet.public-1.id
-<<<<<<< HEAD:ec2project.tf 
+
   iam_instance_profile        = "Labrole"
   count = 1
   tags = {
     Name = "Sandbox1"
-=======
-  iam_instance_profile        = "instance-LabRole"
-  count = 1
-  tags = {
-    Name = "Sandbox"
->>>>>>> origin/main:ec2project.tf
-  }
+ 
   #user_data = file("userdata.sh")
     user_data = "${base64encode(data.template_file.ec2userdatatemplate.rendered)}"
 
