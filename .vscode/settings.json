@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "http://deham10.cyoauc7cwdyr.us-east-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "deham10",
+            "database": "employees",
+            "username": "deham10",
+            "password": "deham1011"
+        }
+    ]
+}
