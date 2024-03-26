@@ -18,3 +18,17 @@ variable "AMIs" {
     us-west-2 = "ami-0895022f3dac85884"
   }
 }
+
+variable "db_name" {
+  default = "labdb"
+
+}
+variable "db_password" {
+  default = "labdbpassword"
+
+}
+variable "db_user" {
+  default = "labdbuser"
+}
+ 
+ 

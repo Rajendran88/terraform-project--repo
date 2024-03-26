@@ -85,10 +85,10 @@ resource "aws_route_table_association" "my_publicSubnetAssociation2" {
 # Provides a resource to create a VPC routing table
 resource "aws_route_table" "my_privateRouteTable1"{
     vpc_id = aws_vpc.dev_vpc.id
-    route{
-        cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.my_IGW.id
-    }
+    # route{
+    #     cidr_block = "0.0.0.0/0"
+        
+    # }
     tags = {
         Name = "myprivateRoute1"
     }

@@ -113,3 +113,27 @@ resource "aws_security_group" "allow_aurora_access" {
     Name = "aurora-stack-allow-aurora-MySQL"
   }
 }
+
+#create security group for rds db instance
+resource "aws_security_group" "rds_sg" {
+  name        = "rds_sg"
+  description = "permit access from web security group"
+  vpc_id      =  aws_vpc.dev_vpc.id
+
+
+ingress {
+  from_port       = 3306
+  to_port         = 3306
+  protocol        = "tcp"
+  security_groups = [aws_security_group.sg_vpc.id]
+}
+egress {
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+} 
+tags = {
+  Name = "rds_sg"
+}
+}

@@ -48,7 +48,16 @@ provisioner "local-exec" {
 
 data "template_file" "ec2userdatatemplate" {
   template = "${file("userdata.tpl")}"
+ 
+   vars = {
+    rds_endpoint = "${data.aws_db_instance.rds_instance_data.endpoint}"
+    rds_user = "${var.db_user}"
+    rds_password = "${var.db_password}"
+    rds_database = "${data.aws_db_instance.rds_instance_data.id}"
+
+  }
 }
+
 
 output "ec2rendered" {
   value = "${data.template_file.ec2userdatatemplate.rendered}"
@@ -57,3 +66,4 @@ output "ec2rendered" {
 output "public_ip" {
   value = aws_instance.instance[0].public_ip
 }
+
