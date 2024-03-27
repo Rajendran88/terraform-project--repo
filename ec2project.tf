@@ -34,7 +34,7 @@ resource "aws_instance" "instance" {
   #iam_instance_profile        = "Labrole"
   count = 1
   tags = {
-    Name = "Sandbox"
+    Name = "wordpressserver"
 
  }
   #user_data = file("userdata.sh")
